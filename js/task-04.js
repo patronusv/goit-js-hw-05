@@ -7,10 +7,10 @@ class StringBuilder {
     return this._value;
   }
   append(str) {
-    return (this._value = `${this._value}${str}`);
+    return (this._value += str);
   }
   prepend(str) {
-    return (this._value = `${str}${this._value}`);
+    return (this._value = str + this._value);
   }
   pad(str) {
     this.prepend(str);

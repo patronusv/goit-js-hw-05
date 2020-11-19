@@ -1,19 +1,19 @@
 'use strict';
 class Car {
   static getSpecs(car) {
-    console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`);
+    console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car._price}`);
   }
   constructor({ maxSpeed, price }) {
     this.maxSpeed = maxSpeed;
     this.speed = 0;
     this.isOn = false;
     this.distance = 0;
-    this.price = price;
+    this._price = price;
   }
-  get price() {
+  get getPrice() {
     return this._price;
   }
-  set price(value) {
+  set setPrice(value) {
     this._price = value;
   }
   turnOn() {
@@ -50,6 +50,6 @@ mustang.turnOff();
 Car.getSpecs(mustang);
 // maxSpeed: 200, speed: 0, isOn: false, distance: 130, price: 2000
 
-console.log(mustang.price); // 2000
-mustang.price = 4000;
-console.log(mustang.price); // 4000
+console.log(mustang.getPrice); // 2000
+mustang.setPrice = 4000;
+console.log(mustang.getPrice); // 4000
